@@ -1,0 +1,1089 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0D0D0D;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#9d4edd;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#c77dff;
+}
+
+/* ==========================================
+   FUNDO ESTRELADO
+========================================== */
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.6) 1px,transparent 2px),
+    radial-gradient(circle at 70% 40%,rgba(255,255,255,.4) 1px,transparent 2px),
+    radial-gradient(circle at 50% 80%,rgba(255,255,255,.5) 1px,transparent 2px),
+    radial-gradient(circle at 80% 70%,rgba(255,255,255,.5) 1px,transparent 2px),
+    #0D0D0D;
+
+    animation:starsMove 40s linear infinite;
+}
+
+@keyframes starsMove{
+
+    from{
+        background-position:0 0,0 0,0 0,0 0;
+    }
+
+    to{
+        background-position:400px 300px,
+                           -350px 250px,
+                           250px -350px,
+                           -300px -200px;
+    }
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:url("img/fundo.jpg") center center/cover no-repeat;
+
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(3px);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+    width:90%;
+    max-width:900px;
+
+}
+
+.hero h2{
+
+    font-size:70px;
+    margin-bottom:15px;
+
+    animation:floatHeart 3s infinite ease-in-out;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    font-family:"Great Vibes",cursive;
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+    line-height:38px;
+
+    color:#ddd;
+
+    margin-bottom:40px;
+
+}
+
+.hero button{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(135deg,#9d4edd,#ff4d8d);
+
+    transition:.4s;
+
+    box-shadow:0 0 35px rgba(157,78,221,.45);
+
+}
+
+.hero button:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:0 0 45px #ff4d8d;
+
+}
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:120px 0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    transition:.5s;
+
+    box-shadow:0 0 45px rgba(255,77,141,.30);
+
+}
+
+.about img:hover{
+
+    transform:scale(1.04) rotate(-1deg);
+
+}
+
+.text{
+
+    background:rgba(255,255,255,.05);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.text h2{
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    color:#ff78aa;
+
+}
+
+.text p{
+
+    line-height:35px;
+
+    font-size:18px;
+
+    color:#ddd;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media(max-width:900px){
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+.about{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.text{
+
+    padding:30px;
+
+}
+
+}
+/*==========================================
+            TIMELINE
+==========================================*/
+
+.timeline{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+    padding:120px 0;
+
+}
+
+.timeline h2{
+
+    text-align:center;
+
+    font-size:45px;
+
+    margin-bottom:70px;
+
+    color:#ff78aa;
+
+}
+
+.timeline-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 35px rgba(157,78,221,.35);
+
+}
+
+.card span{
+
+    font-size:55px;
+
+    display:block;
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    font-size:25px;
+
+    margin-bottom:15px;
+
+    color:#fff;
+
+}
+
+.card p{
+
+    color:#cfcfcf;
+
+    line-height:28px;
+
+}
+
+/*==========================================
+            GALERIA
+==========================================*/
+
+.gallery{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:120px 0;
+
+}
+
+.gallery h2{
+
+    text-align:center;
+
+    font-size:45px;
+
+    color:#ff78aa;
+
+    margin-bottom:60px;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.grid img{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    box-shadow:0 0 25px rgba(255,255,255,.08);
+
+}
+
+.grid img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 45px rgba(255,77,141,.35);
+
+}
+
+/*==========================================
+            CONTADOR
+==========================================*/
+
+.counter{
+
+    padding:130px 20px;
+
+    text-align:center;
+
+}
+
+.counter h2{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+}
+
+#contador{
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    color:#ff4d8d;
+
+    text-shadow:0 0 20px rgba(255,77,141,.6);
+
+}
+
+/*==========================================
+            CARTA
+==========================================*/
+
+.letter{
+
+    width:90%;
+    max-width:900px;
+
+    margin:auto;
+
+    padding:120px 0;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    min-height:520px;
+
+    perspective:1200px;
+
+    cursor:pointer;
+
+}
+
+.front{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    border-radius:25px;
+
+    background:linear-gradient(145deg,#8a2be2,#ff4d8d);
+
+    transition:1s;
+
+    backface-visibility:hidden;
+
+    box-shadow:0 0 40px rgba(157,78,221,.35);
+
+}
+
+.front{
+
+    font-size:70px;
+
+}
+
+.front p{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.inside{
+
+    position:absolute;
+
+    inset:0;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    background:#ffffff;
+
+    color:#333;
+
+    transform:rotateY(180deg);
+
+    transition:1s;
+
+    backface-visibility:hidden;
+
+    overflow:auto;
+
+}
+
+.inside h2{
+
+    color:#ff4d8d;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:40px;
+
+}
+
+.inside p{
+
+    line-height:35px;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+.inside h3{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#8a2be2;
+
+    font-size:28px;
+
+}
+
+.envelope.open .front{
+
+    transform:rotateY(180deg);
+
+}
+
+.envelope.open .inside{
+
+    transform:rotateY(360deg);
+
+}
+
+/*==========================================
+            RESPONSIVO
+==========================================*/
+
+@media(max-width:768px){
+
+.timeline h2,
+.gallery h2,
+.counter h2{
+
+    font-size:34px;
+
+}
+
+#contador{
+
+    font-size:48px;
+
+}
+
+.front{
+
+    font-size:55px;
+
+}
+
+.front p{
+
+    font-size:18px;
+
+}
+
+.inside{
+
+    padding:30px;
+
+}
+
+.inside h2{
+
+    font-size:30px;
+
+}
+
+.inside p{
+
+    font-size:16px;
+
+    line-height:30px;
+
+}
+
+}
+/*==========================================
+            MÚSICA
+==========================================*/
+
+.music{
+
+    width:90%;
+    max-width:900px;
+
+    margin:auto;
+
+    padding:120px 0;
+
+    text-align:center;
+
+}
+
+.music h2{
+
+    font-size:45px;
+
+    color:#ff78aa;
+
+    margin-bottom:40px;
+
+}
+
+.music button{
+
+    padding:18px 45px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:linear-gradient(135deg,#8a2be2,#ff4d8d);
+
+    transition:.4s;
+
+    box-shadow:0 0 35px rgba(255,77,141,.35);
+
+}
+
+.music button:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 0 45px rgba(255,77,141,.6);
+
+}
+
+.music i{
+
+    margin-right:10px;
+
+}
+
+/*==========================================
+            TELA FINAL
+==========================================*/
+
+.final{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.final h1{
+
+    font-size:55px;
+
+    font-family:"Great Vibes",cursive;
+
+    margin-bottom:30px;
+
+}
+
+.final h2{
+
+    font-size:40px;
+
+    margin-bottom:30px;
+
+    color:#ff78aa;
+
+}
+
+.final h3{
+
+    font-size:35px;
+
+    margin-bottom:50px;
+
+}
+
+.final button{
+
+    padding:18px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:white;
+
+    background:linear-gradient(135deg,#8a2be2,#ff4d8d);
+
+    transition:.4s;
+
+}
+
+.final button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================
+            ANIMAÇÕES
+==========================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==========================================
+        CORAÇÕES FLUTUANDO
+==========================================*/
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    color:#ff4d8d;
+
+    font-size:22px;
+
+    animation:heartUp linear forwards;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+@keyframes heartUp{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(.5)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-110vh)
+        scale(1.5)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==========================================
+        EFEITO GLASS
+==========================================*/
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+}
+
+/*==========================================
+        SELEÇÃO DE TEXTO
+==========================================*/
+
+::selection{
+
+    background:#ff4d8d;
+
+    color:white;
+
+}
+
+/*==========================================
+        LINKS
+==========================================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/*==========================================
+        IMAGENS
+==========================================*/
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/*==========================================
+        TRANSIÇÕES
+==========================================*/
+
+section{
+
+    transition:.6s;
+
+}
+
+/*==========================================
+        RESPONSIVO
+==========================================*/
+
+@media(max-width:900px){
+
+.final h1{
+
+    font-size:38px;
+
+}
+
+.final h2{
+
+    font-size:28px;
+
+}
+
+.final h3{
+
+    font-size:24px;
+
+}
+
+.music h2{
+
+    font-size:34px;
+
+}
+
+.music button{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+    font-size:35px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+    line-height:30px;
+
+}
+
+.text h2{
+
+    font-size:30px;
+
+}
+
+.timeline h2,
+.gallery h2{
+
+    font-size:30px;
+
+}
+
+.card{
+
+    padding:25px;
+
+}
+
+.card h3{
+
+    font-size:22px;
+
+}
+
+.grid img{
+
+    height:260px;
+
+}
+
+}
+
+/*==========================================
+        FUNDO DEGRADÊ ANIMADO
+==========================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,#8a2be220,transparent 35%),
+    radial-gradient(circle at bottom right,#ff4d8d20,transparent 35%);
+
+    z-index:-3;
+
+    animation:backgroundMove 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes backgroundMove{
+
+    from{
+
+        transform:translateX(-30px)
+                  translateY(-20px);
+
+    }
+
+    to{
+
+        transform:translateX(30px)
+                  translateY(20px);
+
+    }
+
+}
